@@ -618,8 +618,8 @@
                 <div>
                     <h4 class="font-bold text-sm">مستشارك التسويقي الذكي</h4>
                     <p class="text-xs text-brand-light opacity-80 flex items-center gap-1">
-                        <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
-                        متصل الآن
+                        <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse"></span>
+                        قريباً جداً
                     </p>
                 </div>
             </div>
@@ -636,25 +636,34 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/></svg>
                 </div>
                 <div class="bg-white dark:bg-gray-800 p-3 rounded-2xl rounded-bl-none shadow-sm border border-gray-100 dark:border-gray-700 text-sm text-gray-700 dark:text-gray-300 max-w-[85%] leading-relaxed">
-                    أهلاً بك في <strong>تكنولوجيا التسويق الإلكتروني</strong>! 👋<br>أنا مستشارك الذكي، كيف يمكنني مساعدتك اليوم في تحسين نتائج أعمالك؟
+                    مرحباً بك! 👋<br>
+                    نحن نعمل حالياً على تطوير <strong>مستشارك التسويقي الذكي</strong> بأحدث تقنيات الذكاء الاصطناعي (Gemini 2.5) ليقدم لك أدق النصائح التسويقية.
+                    <div class="mt-2 p-2 bg-brand-orange/10 rounded-lg text-brand-orange font-bold text-[10px] text-center border border-brand-orange/20">
+                        سيتم تفعيل هذه الميزة قريباً لجميع عملائنا.. انتظرونا! 🚀
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Suggested Questions -->
-        <div class="p-3 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 overflow-x-auto whitespace-nowrap flex gap-2 hide-scrollbar" style="-ms-overflow-style: none; scrollbar-width: none;">
-            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange hover:bg-brand-orange hover:text-white px-4 py-2 rounded-full text-xs font-bold transition-all border border-brand-orange/20 touch-manipulation">كيف أزيد مبيعات متجري؟</button>
-            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange hover:bg-brand-orange hover:text-white px-4 py-2 rounded-full text-xs font-bold transition-all border border-brand-orange/20 touch-manipulation">ما هي أفضل منصة إعلانية؟</button>
-            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange hover:bg-brand-orange hover:text-white px-4 py-2 rounded-full text-xs font-bold transition-all border border-brand-orange/20 touch-manipulation">كيف أستهدف عملائي بدقة؟</button>
+        <!-- Suggested Questions (Disabled) -->
+        <div class="p-3 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 overflow-x-auto whitespace-nowrap flex gap-2 hide-scrollbar opacity-40 grayscale pointer-events-none" style="-ms-overflow-style: none; scrollbar-width: none;">
+            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-xs font-bold border border-brand-orange/20">كيف أزيد مبيعات متجري؟</button>
+            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-xs font-bold border border-brand-orange/20">ما هي أفضل منصة إعلانية؟</button>
+            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-xs font-bold border border-brand-orange/20">كيف أستهدف عملائي بدقة؟</button>
         </div>
 
-        <!-- Input Area -->
-        <form id="chat-form" class="p-3 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 flex gap-2 items-center">
-            <input type="text" id="chat-input" placeholder="اكتب سؤالك هنا..." class="flex-1 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-teal dark:focus:border-brand-teal text-gray-800 dark:text-gray-100 placeholder-gray-400" autocomplete="off">
-            <button type="submit" class="bg-brand-teal hover:bg-brand-tealDark text-white w-12 h-12 rounded-xl flex items-center justify-center transition-all shadow-md shadow-brand-teal/20 flex-shrink-0 active:scale-90 touch-manipulation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rtl:-scale-x-100 transform -rotate-90"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-            </button>
-        </form>
+        <!-- Input Area (Disabled) -->
+        <div class="relative">
+            <form id="chat-form" class="p-3 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 flex gap-2 items-center opacity-50 pointer-events-none">
+                <input type="text" id="chat-input" placeholder="اكتب سؤالك هنا..." class="flex-1 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-teal dark:focus:border-brand-teal text-gray-800 dark:text-gray-100 placeholder-gray-400" autocomplete="off" disabled>
+                <button type="submit" class="bg-brand-teal hover:bg-brand-tealDark text-white w-12 h-12 rounded-xl flex items-center justify-center transition-all shadow-md shadow-brand-teal/20 flex-shrink-0" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rtl:-scale-x-100 transform -rotate-90"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                </button>
+            </form>
+            <div class="absolute inset-0 z-10 flex items-center justify-center bg-white/10 dark:bg-black/10 backdrop-blur-[1px]">
+                <span class="bg-white dark:bg-gray-800 text-brand-orange text-[10px] font-bold px-3 py-1 rounded-full border border-brand-orange/30 shadow-sm">تفعيل قريباً</span>
+            </div>
+        </div>
     </div>
 
     <script>
