@@ -20,9 +20,12 @@ module.exports = async (req, res) => {
     const { message, history } = req.body;
     const API_KEY = process.env.GEMINI_API_KEY;
 
-    if (!API_KEY) {
-      console.error("خطأ: مفتاح GEMINI_API_KEY غير موجود في إعدادات Vercel");
-      return res.status(500).json({ status: 'error', message: 'API Key is missing' });
+    if (!API_KEY || API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+      console.error("Error: GEMINI_API_KEY is not set in Vercel environment variables");
+      return res.status(500).json({ 
+        status: 'error', 
+        message: 'API Key is missing. Please set GEMINI_API_KEY in your environment variables.' 
+      });
     }
 
     // تنظيف الرسالة من أي أكواد خبيثة

@@ -762,13 +762,8 @@
                 });
 
                 if (!response.ok) {
-                    let errorData;
-                    try {
-                        errorData = await response.json();
-                    } catch (e) {
-                        errorData = { message: `Server error: ${response.status}` };
-                    }
-                    throw new Error(errorData.message || `خطأ في الخادم (${response.status})`);
+                    const errorText = await response.text();
+                    throw new Error(`Server error: ${response.status}`);
                 }
 
                 const data = await response.json();
@@ -782,7 +777,7 @@
                     fullResponseText = data.reply;
                     botContentArea.innerHTML = fullResponseText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
                 } else {
-                    throw new Error(data.message || "حدث خطأ غير متوقع");
+                    throw new Error(data.message || "Error");
                 }
                 
                 chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -796,17 +791,8 @@
                 console.error("Chat Error:", error);
                 
                 // Show a helpful error message to the user
-                let friendlyMsg = "عذراً، حدث خطأ في الاتصال بالخادم.";
-                if (error.message.includes("API Key is missing")) {
-                    friendlyMsg = "عذراً، يبدو أن مفتاح API (GEMINI_API_KEY) غير مكوّن في إعدادات Vercel.";
-                } else if (error.message.includes("Failed to fetch") || error.message.includes("NetworkError")) {
-                    friendlyMsg = "عذراً، تعذر الوصول إلى الخادم. تأكد من تشغيل المشروع باستخدام 'vercel dev' أو رفعه إلى Vercel.";
-                } else {
-                    friendlyMsg = `خطأ: ${error.message}`;
-                }
-
-                const errorMsg = appendMessage(friendlyMsg, false);
-                errorMsg.querySelector('.content-area').classList.add('text-red-500', 'font-bold');
+                const errorMsg = appendMessage("عذراً، حدث خطأ في الاتصال بالخادم. يرجى التأكد من تشغيل الخادم أو رفع المشروع إلى Vercel.", false);
+                errorMsg.querySelector('.content-area').classList.add('text-red-500');
 
                 bubble.classList.add('border-b-2', 'border-red-500');
                 retryBtn.classList.remove('hidden');
