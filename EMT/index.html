@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>تكنولوجيا التسويق الإلكتروني | شريكك في النجاح الرقمي</title>
+    <meta name="description" content="نحوّل حضورك الرقمي إلى نتائج قابلة للقياس من خلال استراتيجيات تسويق ذكية وتحليل بيانات دقيق وإدارة حملات إعلانية احترافية.">
+    <!-- Security Headers (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://api.visitorbadge.io; connect-src 'self' /api/chat; frame-ancestors 'none'; form-action 'self'; base-uri 'self';">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Theme Script -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            teal: '#178ca4',
+                            tealLight: '#1facc9',
+                            tealDark: '#106b7d',
+                            orange: '#e85d04',
+                            orangeLight: '#ff7b25',
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+            .touch-manipulation {
+                touch-action: manipulation;
+            }
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Mobile Bottom Bar Padding Adjustment */
+        @media (max-width: 767px) {
+            body {
+                padding-bottom: 76px; /* Space for the fixed bottom nav */
+            }
+        }
+
+        /* Swiper Customizations */
+        .swiper-pagination-bullet-active {
+            background-color: #178ca4 !important;
+            width: 24px !important;
+            border-radius: 10px !important;
+            transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet {
+            background-color: #cbd5e1;
+            opacity: 1;
+        }
+        .dark .swiper-pagination-bullet {
+            background-color: #475569;
+        }
+        .dark .swiper-pagination-bullet-active {
+            background-color: #1facc9 !important;
+        }
+        .swiper-slide {
+            height: auto !important; /* Make slides stretch to equal height */
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; .dark & { background: #1e293b; } }
+        ::-webkit-scrollbar-thumb { background: #178ca4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #106b7d; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-brand-dark dark:bg-gray-900 dark:text-gray-100 antialiased selection:bg-brand-orange selection:text-white overflow-x-hidden transition-colors duration-300">
+
+    <!-- Mobile Quick Action Bottom Bar (App-like Feel) -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 p-3 px-4 flex justify-between gap-3 z-[60] shadow-[0_-10px_20px_rgba(0,0,0,0.05)] pb-safe transition-colors duration-300">
+        <a href="https://wa.me/967773030064" target="_blank" class="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-3 rounded-2xl font-bold shadow-lg shadow-[#25D366]/30 active:scale-95 transition-transform touch-manipulation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+            واتساب
+        </a>
+        <a href="tel:+967730080030" class="flex-1 bg-brand-dark dark:bg-gray-700 text-white flex items-center justify-center gap-2 py-3 rounded-2xl font-bold shadow-lg shadow-gray-900/20 dark:shadow-black/40 active:scale-95 transition-transform touch-manipulation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            اتصل بنا
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3" data-aos="fade-down">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white dark:bg-gray-800 flex items-center justify-center overflow-hidden shrink-0 shadow-sm border border-gray-100 dark:border-gray-700">
+                    <img src="./img/logo.jpg" alt="EMT Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23178ca4\' stroke-width=\'2\'><path d=\'M2 12h4l3-9 5 18 3-9h5\'/></svg>'">
+                </div>
+                <span class="font-bold text-lg md:text-xl text-brand-dark dark:text-white transition-colors duration-300">تكنولوجيا التسويق الإلكتروني</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8" data-aos="fade-down" data-aos-delay="100">
+                <nav class="flex gap-6 text-base font-semibold text-gray-600 dark:text-gray-300">
+                    <a href="#services" class="hover:text-brand-teal dark:hover:text-brand-tealLight transition-colors">خدماتنا</a>
+                    <a href="#why-us" class="hover:text-brand-teal dark:hover:text-brand-tealLight transition-colors">لماذا نحن</a>
+                    <a href="#process" class="hover:text-brand-teal dark:hover:text-brand-tealLight transition-colors">آلية العمل</a>
+                </nav>
+                
+                <div class="flex items-center gap-4 border-r border-gray-200 dark:border-gray-700 pr-4">
+                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5 transition-all hover:rotate-12">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <a href="#contact" class="bg-brand-orange hover:bg-brand-orangeLight text-white px-6 py-2.5 rounded-full font-bold transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-orange/30">
+                        احجز استشارة
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-1 md:hidden" data-aos="fade-left">
+                <button id="theme-toggle-mobile" class="text-gray-500 dark:text-gray-400 focus:outline-none rounded-lg p-2 transition-all active:scale-90 touch-manipulation">
+                    <svg id="theme-toggle-dark-icon-mobile" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon-mobile" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+                <button id="mobile-menu-btn" class="text-brand-dark dark:text-white p-2 focus:outline-none transition-all active:scale-90 touch-manipulation">
+                    <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    <svg id="icon-x" class="hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Drawer) -->
+        <div id="mobile-menu" class="fixed inset-0 top-[70px] bg-white dark:bg-gray-900 z-40 hidden flex-col p-6 transition-all duration-300 opacity-0 translate-x-full">
+            <div class="flex flex-col gap-6 text-xl">
+                <a href="#services" class="mobile-link font-bold text-gray-800 dark:text-gray-100 py-2 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                    خدماتنا
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="m15 18-6-6 6-6"/></svg>
+                </a>
+                <a href="#why-us" class="mobile-link font-bold text-gray-800 dark:text-gray-100 py-2 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                    لماذا نحن
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="m15 18-6-6 6-6"/></svg>
+                </a>
+                <a href="#process" class="mobile-link font-bold text-gray-800 dark:text-gray-100 py-2 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                    آلية العمل
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="m15 18-6-6 6-6"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-gradient-to-b from-brand-teal/5 to-white dark:from-brand-teal/10 dark:to-gray-900 transition-colors duration-300">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-teal/20 dark:bg-brand-teal/30 blur-3xl animate-float pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-orange/10 dark:bg-brand-orange/20 blur-3xl animate-float-delayed pointer-events-none"></div>
+            
+            <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <span data-aos="zoom-in" class="inline-block py-1.5 px-5 rounded-full bg-brand-orange/10 dark:bg-brand-orange/20 text-brand-orange dark:text-brand-orangeLight font-bold text-sm mb-6 border border-brand-orange/20">
+                        شريكك في النمو الرقمي
+                    </span>
+                    <h1 data-aos="fade-up" data-aos-delay="100" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-brand-dark dark:text-white leading-tight mb-6 text-balance">
+                        من <span class="text-transparent bg-clip-text bg-gradient-to-l from-brand-teal to-brand-tealLight">زيارات</span>… إلى <span class="text-transparent bg-clip-text bg-gradient-to-l from-brand-orange to-brand-orangeLight">مبيعات</span>
+                    </h1>
+                    <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed text-balance">
+                        نحوّل حضورك الرقمي إلى نتائج قابلة للقياس من خلال استراتيجيات تسويق ذكية وتحليل بيانات دقيق.
+                    </p>
+                    
+                    <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#contact" class="w-full sm:w-auto bg-brand-teal hover:bg-brand-tealDark text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl shadow-brand-teal/20 flex items-center justify-center gap-2 active:scale-95 touch-manipulation">
+                            ابدأ الآن
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-brand-dark dark:text-white border-2 border-gray-100 dark:border-gray-700 px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1 flex items-center justify-center active:scale-95 touch-manipulation">
+                            تعرف على خدماتنا
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Interactive Carousel on Mobile) -->
+        <section id="services" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 relative overflow-hidden">
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-black text-brand-dark dark:text-white mb-4">خدماتنا</h2>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">اسحب لرؤية المزيد. نقدم حلولاً متكاملة تغطي كافة احتياجاتك الرقمية.</p>
+                </div>
+
+                <!-- Swiper Container -->
+                <div class="swiper services-swiper pb-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+                        <!-- Service 1 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl dark:hover:shadow-brand-teal/10 transition-all duration-300 group cursor-grab active:cursor-grabbing">
+                                <div class="w-16 h-16 rounded-2xl bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal dark:text-brand-tealLight flex items-center justify-center mb-6 group-hover:bg-brand-teal group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3">إدارة الحملات الإعلانية</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">حملات مستهدفة على جميع المنصات لزيادة الوعي والمبيعات بطريقة احترافية.</p>
+                            </div>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl dark:hover:shadow-brand-teal/10 transition-all duration-300 group cursor-grab active:cursor-grabbing">
+                                <div class="w-16 h-16 rounded-2xl bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal dark:text-brand-tealLight flex items-center justify-center mb-6 group-hover:bg-brand-teal group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3">تحسين معدل التحويل</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">نحلل مسار المستخدم لنضاعف نسبة تحويل الزوار إلى عملاء فعليين (CRO).</p>
+                            </div>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl dark:hover:shadow-brand-teal/10 transition-all duration-300 group cursor-grab active:cursor-grabbing">
+                                <div class="w-16 h-16 rounded-2xl bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal dark:text-brand-tealLight flex items-center justify-center mb-6 group-hover:bg-brand-teal group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3">تحليل البيانات والتقارير</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">قراراتك مبنية على أرقام دقيقة وتقارير دورية شفافة توضح العائد على الاستثمار.</p>
+                            </div>
+                        </div>
+                        <!-- Service 4 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl dark:hover:shadow-brand-teal/10 transition-all duration-300 group cursor-grab active:cursor-grabbing">
+                                <div class="w-16 h-16 rounded-2xl bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal dark:text-brand-tealLight flex items-center justify-center mb-6 group-hover:bg-brand-teal group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3">استراتيجيات النمو</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">خطط تسويقية متكاملة تضمن نمو مستدام لعلامتك التجارية في السوق الرقمي.</p>
+                            </div>
+                        </div>
+                        <!-- Service 5 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl dark:hover:shadow-brand-teal/10 transition-all duration-300 group cursor-grab active:cursor-grabbing">
+                                <div class="w-16 h-16 rounded-2xl bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal dark:text-brand-tealLight flex items-center justify-center mb-6 group-hover:bg-brand-teal group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3">إدارة السوشيال ميديا</h3>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base">بناء مجتمع متفاعل وصناعة محتوى إبداعي يعبر عن هويتك ويجذب جمهورك.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="py-20 bg-gray-50 dark:bg-gray-800/50 overflow-hidden relative transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <h2 class="text-3xl md:text-4xl font-black text-brand-dark dark:text-white mb-6">لماذا نحن؟</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            نحن لا نطلق حملات إعلانية فحسب، بل نصنع قصص نجاح. منهجيتنا تعتمد على الشفافية والأرقام لتحقيق أفضل عائد على استثمارك.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-brand-teal/50 hover:-translate-x-2 transition-all" data-aos="fade-up" data-aos-delay="50">
+                                <div class="text-brand-orange bg-brand-orange/10 p-2.5 rounded-xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <span class="font-bold text-brand-dark dark:text-gray-100 text-lg">نركز على العميل وليس الإعلان</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-brand-teal/50 hover:-translate-x-2 transition-all" data-aos="fade-up" data-aos-delay="100">
+                                <div class="text-brand-orange bg-brand-orange/10 p-2.5 rounded-xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <span class="font-bold text-brand-dark dark:text-gray-100 text-lg">قرارات مبنية على البيانات</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-brand-teal/50 hover:-translate-x-2 transition-all" data-aos="fade-up" data-aos-delay="150">
+                                <div class="text-brand-orange bg-brand-orange/10 p-2.5 rounded-xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <span class="font-bold text-brand-dark dark:text-gray-100 text-lg">نتائج قابلة للقياس والتحليل</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 w-full relative" data-aos="zoom-in" data-aos-delay="200">
+                         <div class="absolute inset-0 bg-gradient-to-tr from-brand-teal to-brand-tealLight rounded-3xl transform rotate-3 scale-105 opacity-20 animate-pulse-slow"></div>
+                         <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl relative border border-gray-100 dark:border-gray-700 text-center animate-float hover:shadow-brand-teal/20 transition-all duration-500">
+                            <div class="inline-block p-4 bg-brand-orange/10 dark:bg-brand-orange/20 text-brand-orange rounded-full mb-6 shadow-inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark dark:text-white mb-4">نصيحة تسويقية</h3>
+                            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-700 mb-6">
+                                <p class="text-xl font-bold text-brand-teal dark:text-brand-tealLight leading-relaxed">
+                                    "أفضل نصيحة لتحسين نتائجك: ركّز على العميل… وليس على الإعلان."
+                                </p>
+                            </div>
+                            <img src="./assets/marketing_tip.png" alt="Marketing Analysis" class="w-full max-w-sm mx-auto rounded-2xl shadow-sm dark:opacity-90"/>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section (Interactive on Mobile) -->
+        <section id="process" class="py-20 bg-brand-dark dark:bg-gray-950 text-white relative overflow-hidden transition-colors duration-300">
+             <div class="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none animate-pulse-slow" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px"></div>
+             
+             <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4 text-white">آلية العمل</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">خطوات واضحة ومدروسة لضمان نجاح مشروعك الرقمي.</p>
+                </div>
+
+                <!-- Swiper for Process -->
+                <div class="swiper process-swiper pb-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+                        <!-- Step 1 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-brand-teal/20 hover:-translate-y-2 transition-all duration-300 relative cursor-grab active:cursor-grabbing group">
+                                <span class="text-6xl font-black text-brand-teal/20 absolute top-4 left-4 group-hover:text-brand-teal/40 transition-colors">01</span>
+                                <h3 class="text-2xl font-bold mb-4 mt-6 text-brand-tealLight relative z-10">نفهم مشروعك</h3>
+                                <p class="text-gray-300 text-base leading-relaxed relative z-10">ندرس السوق والمنافسين ونحدد نقاط القوة لعلامتك.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-brand-teal/20 hover:-translate-y-2 transition-all duration-300 relative cursor-grab active:cursor-grabbing group">
+                                <span class="text-6xl font-black text-brand-teal/20 absolute top-4 left-4 group-hover:text-brand-teal/40 transition-colors">02</span>
+                                <h3 class="text-2xl font-bold mb-4 mt-6 text-brand-tealLight relative z-10">نحلل جمهورك</h3>
+                                <p class="text-gray-300 text-base leading-relaxed relative z-10">نحدد بدقة من هو عميلك المثالي وكيف يمكننا الوصول إليه.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-brand-teal/20 hover:-translate-y-2 transition-all duration-300 relative cursor-grab active:cursor-grabbing group">
+                                <span class="text-6xl font-black text-brand-teal/20 absolute top-4 left-4 group-hover:text-brand-teal/40 transition-colors">03</span>
+                                <h3 class="text-2xl font-bold mb-4 mt-6 text-brand-tealLight relative z-10">نضع الاستراتيجية</h3>
+                                <p class="text-gray-300 text-base leading-relaxed relative z-10">نبني خطة عمل تسويقية واضحة بأهداف قابلة للقياس.</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-brand-teal/20 hover:-translate-y-2 transition-all duration-300 relative cursor-grab active:cursor-grabbing group">
+                                <span class="text-6xl font-black text-brand-teal/20 absolute top-4 left-4 group-hover:text-brand-teal/40 transition-colors">04</span>
+                                <h3 class="text-2xl font-bold mb-4 mt-6 text-brand-tealLight relative z-10">نطلق الحملات</h3>
+                                <p class="text-gray-300 text-base leading-relaxed relative z-10">تنفيذ دقيق وإبداعي للحملات على المنصات الأكثر ملاءمة.</p>
+                            </div>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-brand-teal/20 hover:-translate-y-2 transition-all duration-300 relative cursor-grab active:cursor-grabbing group">
+                                <span class="text-6xl font-black text-brand-teal/20 absolute top-4 left-4 group-hover:text-brand-teal/40 transition-colors">05</span>
+                                <h3 class="text-2xl font-bold mb-4 mt-6 text-brand-tealLight relative z-10">نقيس ونحسّن</h3>
+                                <p class="text-gray-300 text-base leading-relaxed relative z-10">متابعة مستمرة وتحسين دوري لضمان تحقيق أفضل عائد.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="max-w-4xl mx-auto bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-[2rem] p-8 md:p-14 shadow-2xl border border-gray-100 dark:border-gray-700 text-center hover:shadow-brand-teal/10 transition-shadow duration-500" data-aos="zoom-in">
+                    <h2 class="text-3xl md:text-5xl font-black text-brand-dark dark:text-white mb-6">مستعد لزيادة مبيعاتك؟</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
+                        تواصل معنا الآن للحصول على استشارة مجانية لمشروعك، ودعنا نضع لك خطة تسويقية تضمن لك النمو.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+                        <a href="https://wa.me/967773030064" target="_blank" class="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe57] text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl shadow-[#25D366]/30 active:scale-95 touch-manipulation">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+                            <span>واتساب</span>
+                            <span dir="ltr" class="text-sm font-normal opacity-80">+967 773 030 064</span>
+                        </a>
+                        <a href="tel:+967730080030" class="flex items-center justify-center gap-3 bg-brand-dark hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl shadow-gray-900/30 active:scale-95 touch-manipulation">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>اتصال مباشر</span>
+                            <span dir="ltr" class="text-sm font-normal opacity-80">+967 730 080 030</span>
+                        </a>
+                    </div>
+
+                    <div class="flex justify-center gap-6">
+                        <a href="https://facebook.com/19.emt" target="_blank" class="w-14 h-14 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-90 touch-manipulation">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="https://instagram.com/19.emt" target="_blank" class="w-14 h-14 rounded-full bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 flex items-center justify-center hover:bg-pink-600 hover:text-white dark:hover:bg-pink-600 dark:hover:text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-90 touch-manipulation">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-white py-12 border-t border-gray-800 transition-colors duration-300 mb-[76px] md:mb-0">
+        <!-- mb-[76px] ensures footer is entirely visible above mobile bottom bar -->
+        <div class="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-white mb-6 overflow-hidden shadow-lg" data-aos="zoom-in">
+                <img src="./img/logo.jpg" alt="EMT Logo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23178ca4\' stroke-width=\'2\'><path d=\'M2 12h4l3-9 5 18 3-9h5\'/></svg>'">
+            </div>
+            <h3 class="text-2xl font-bold mb-2">تكنولوجيا التسويق الإلكتروني</h3>
+            <p class="text-brand-orangeLight font-medium mb-8 text-lg">شريكك في النجاح الرقمي</p>
+            
+            <div class="flex gap-8 mb-10">
+                <a href="https://facebook.com/19.emt" target="_blank" class="text-gray-400 hover:text-blue-400 hover:-translate-y-1 transition-all"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                <a href="https://instagram.com/19.emt" target="_blank" class="text-gray-400 hover:text-pink-400 hover:-translate-y-1 transition-all"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                <a href="https://wa.me/967773030064" target="_blank" class="text-gray-400 hover:text-[#25D366] hover:-translate-y-1 transition-all"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></a>
+            </div>
+
+            <!-- Visitor Counter -->
+            <div class="bg-gray-800/80 rounded-2xl p-5 border border-gray-700/50 flex flex-col items-center justify-center shadow-inner" data-aos="fade-up">
+                <span class="text-gray-400 text-sm font-semibold mb-3">إجمالي زيارات الموقع</span>
+                <img src="https://api.visitorbadge.io/api/visitors?path=emt.marketing.web&label=%20&labelColor=%231f2937&countColor=%23178ca4&style=flat-square" alt="Visitor Counter" class="h-8 rounded">
+            </div>
+            
+            <div class="w-full h-px bg-gray-800 my-10"></div>
+            
+            <div class="flex flex-col items-center gap-2">
+                <p class="text-gray-500 text-sm font-medium">
+                    جميع الحقوق محفوظة © 2026 تكنولوجيا التسويق الإلكتروني
+                </p>
+                <p class="text-gray-500 text-sm font-medium">
+                    تمت برمجة الموقع عن طريق المهندس <a href="tel:+967773030064" class="text-brand-orangeLight font-bold hover:underline transition-all">مهند هاني</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Interactivity -->
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper Carousel Library -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Initialize AOS Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            disable: 'mobile' // Disable scroll animations on mobile for better performance, relying on Swiper instead
+        });
+
+        // Initialize Swiper Carousels (Makes it highly interactive on mobile/touch devices)
+        const swiperOptions = {
+            slidesPerView: 1.15,
+            spaceBetween: 16,
+            centeredSlides: true,
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false },
+                1024: { slidesPerView: 3, spaceBetween: 30, centeredSlides: false }
+            }
+        };
+
+        const servicesSwiper = new Swiper('.services-swiper', swiperOptions);
+        
+        const processSwiper = new Swiper('.process-swiper', {
+            ...swiperOptions,
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false },
+                1024: { slidesPerView: 4, spaceBetween: 30, centeredSlides: false },
+                1280: { slidesPerView: 5, spaceBetween: 30, centeredSlides: false }
+            }
+        });
+
+        // --- Dark Mode Logic ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const darkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+        const lightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+
+        function updateIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+                darkIconMobile.classList.add('hidden');
+                lightIconMobile.classList.remove('hidden');
+            } else {
+                lightIcon.classList.add('hidden');
+                darkIcon.classList.remove('hidden');
+                lightIconMobile.classList.add('hidden');
+                darkIconMobile.classList.remove('hidden');
+            }
+        }
+        updateIcons();
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+            updateIcons();
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+
+        // --- Mobile Menu Toggle (App Drawer style) ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconX = document.getElementById('icon-x');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        let isOpen = false;
+
+        function toggleMenu() {
+            isOpen = !isOpen;
+            if (isOpen) {
+                menu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // prevent scrolling when menu is open
+                setTimeout(() => {
+                    menu.classList.remove('opacity-0', 'translate-x-full');
+                    menu.classList.add('opacity-100', 'translate-x-0');
+                }, 10);
+                iconMenu.classList.add('hidden');
+                iconX.classList.remove('hidden');
+            } else {
+                menu.classList.remove('opacity-100', 'translate-x-0');
+                menu.classList.add('opacity-0', 'translate-x-full');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+                iconMenu.classList.remove('hidden');
+                iconX.classList.add('hidden');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(isOpen) toggleMenu();
+            });
+        });
+
+        // --- Header Scroll Effect ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('bg-white/95', 'dark:bg-gray-900/95', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-gray-100', 'dark:border-gray-800', 'py-3');
+                header.classList.remove('bg-transparent', 'py-4');
+            } else {
+                header.classList.remove('bg-white/95', 'dark:bg-gray-900/95', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-gray-100', 'dark:border-gray-800', 'py-3');
+                header.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+    </script>
+
+    <!-- AI Chat UI -->
+    <!-- AI Chatbot FAB -->
+    <button id="ai-chat-btn" class="fixed bottom-[85px] md:bottom-8 right-4 md:right-8 z-[70] w-14 h-14 bg-gradient-to-r from-brand-teal to-brand-tealLight rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(23,140,164,0.5)] hover:shadow-[0_0_30px_rgba(23,140,164,0.8)] transition-all duration-300 animate-pulse-slow active:scale-95 touch-manipulation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+    </button>
+
+    <!-- AI Chat Window -->
+    <div id="ai-chat-window" class="fixed bottom-[85px] md:bottom-28 right-4 md:right-8 z-[70] w-[calc(100vw-2rem)] max-w-[380px] h-[500px] max-h-[70vh] bg-white dark:bg-gray-900 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col overflow-hidden transition-all duration-300 origin-bottom-right scale-0 opacity-0 pointer-events-none">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-brand-teal to-brand-tealLight p-4 flex justify-between items-center text-white">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm">مستشارك التسويقي الذكي</h4>
+                    <p class="text-xs text-brand-light opacity-80 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                        متصل الآن
+                    </p>
+                </div>
+            </div>
+            <button id="close-chat-btn" class="text-white hover:bg-white/20 p-2 rounded-xl transition-colors touch-manipulation active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Chat Area -->
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900 flex flex-col">
+            <!-- Welcome Message -->
+            <div class="flex gap-2 w-full">
+                <div class="w-8 h-8 rounded-full bg-brand-teal/10 flex-shrink-0 flex items-center justify-center text-brand-teal mt-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/></svg>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-3 rounded-2xl rounded-bl-none shadow-sm border border-gray-100 dark:border-gray-700 text-sm text-gray-700 dark:text-gray-300 max-w-[85%] leading-relaxed">
+                    أهلاً بك في <strong>تكنولوجيا التسويق الإلكتروني</strong>! 👋<br>أنا مستشارك الذكي، كيف يمكنني مساعدتك اليوم في تحسين نتائج أعمالك؟
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Questions -->
+        <div class="p-3 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 overflow-x-auto whitespace-nowrap flex gap-2 hide-scrollbar" style="-ms-overflow-style: none; scrollbar-width: none;">
+            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange hover:bg-brand-orange hover:text-white px-4 py-2 rounded-full text-xs font-bold transition-all border border-brand-orange/20 touch-manipulation">كيف أزيد مبيعات متجري؟</button>
+            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange hover:bg-brand-orange hover:text-white px-4 py-2 rounded-full text-xs font-bold transition-all border border-brand-orange/20 touch-manipulation">ما هي أفضل منصة إعلانية؟</button>
+            <button class="chat-suggestion flex-shrink-0 bg-brand-orange/10 text-brand-orange hover:bg-brand-orange hover:text-white px-4 py-2 rounded-full text-xs font-bold transition-all border border-brand-orange/20 touch-manipulation">كيف أستهدف عملائي بدقة؟</button>
+        </div>
+
+        <!-- Input Area -->
+        <form id="chat-form" class="p-3 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 flex gap-2 items-center">
+            <input type="text" id="chat-input" placeholder="اكتب سؤالك هنا..." class="flex-1 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-teal dark:focus:border-brand-teal text-gray-800 dark:text-gray-100 placeholder-gray-400" autocomplete="off">
+            <button type="submit" class="bg-brand-teal hover:bg-brand-tealDark text-white w-12 h-12 rounded-xl flex items-center justify-center transition-all shadow-md shadow-brand-teal/20 flex-shrink-0 active:scale-90 touch-manipulation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rtl:-scale-x-100 transform -rotate-90"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // --- AI Chat Logic ---
+        const chatBtn = document.getElementById('ai-chat-btn');
+        const chatWindow = document.getElementById('ai-chat-window');
+        const closeChatBtn = document.getElementById('close-chat-btn');
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+        const suggestions = document.querySelectorAll('.chat-suggestion');
+
+        let chatHistory = [];
+        let isGenerating = false;
+
+        chatBtn.addEventListener('click', () => {
+            chatWindow.classList.toggle('scale-0');
+            chatWindow.classList.toggle('opacity-0');
+            chatWindow.classList.toggle('pointer-events-none');
+            chatBtn.classList.toggle('scale-0');
+        });
+        
+        closeChatBtn.addEventListener('click', () => {
+            chatWindow.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+            chatBtn.classList.remove('scale-0');
+        });
+
+        suggestions.forEach(btn => {
+            btn.addEventListener('click', () => {
+                chatInput.value = btn.innerText;
+                chatForm.dispatchEvent(new Event('submit'));
+            });
+        });
+
+        function appendMessage(text, isUser = false, msgId = null) {
+            const msgDiv = document.createElement('div');
+            if (msgId) msgDiv.id = msgId;
+            msgDiv.className = `flex gap-2 w-full message-container ${isUser ? 'flex-row-reverse' : ''}`;
+            
+            let avatar = isUser ? '' : `<div class="w-8 h-8 rounded-full bg-brand-teal/10 flex-shrink-0 flex items-center justify-center text-brand-teal mt-auto"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>`;
+            
+            let bg = isUser ? 'bg-brand-teal text-white rounded-br-none user-msg-bubble' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-bl-none border border-gray-100 dark:border-gray-700 bot-msg-bubble';
+
+            let parsedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            
+            msgDiv.innerHTML = `
+                ${avatar}
+                <div class="relative flex items-center gap-2 max-w-[85%] ${isUser ? 'flex-row-reverse' : ''}">
+                    <div class="p-3 rounded-2xl shadow-sm text-sm ${bg} content-area leading-relaxed transition-all">
+                        ${parsedText}
+                    </div>
+                    ${isUser ? `<button class="retry-btn hidden text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 p-1.5 rounded-full transition-colors flex-shrink-0" title="إعادة المحاولة">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                    </button>` : ''}
+                </div>
+            `;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return msgDiv;
+        }
+
+        async function sendToGemini(userMessage, msgDivElement) {
+            if (isGenerating) return;
+            isGenerating = true;
+
+            const bubble = msgDivElement.querySelector('.user-msg-bubble');
+            const retryBtn = msgDivElement.querySelector('.retry-btn');
+            
+            // Reset error styling if it's a retry
+            bubble.classList.remove('border-2', 'border-red-500', 'border-b-red-500');
+            retryBtn.classList.add('hidden');
+
+            if (chatHistory.length === 0 || chatHistory[chatHistory.length - 1].role !== "user" || chatHistory[chatHistory.length - 1].parts[0].text !== userMessage) {
+                chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
+            }
+
+            const typingId = 'typing-' + Date.now();
+            const typingDiv = document.createElement('div');
+            typingDiv.id = typingId;
+            typingDiv.className = `flex gap-2 w-full`;
+            typingDiv.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-brand-teal/10 flex-shrink-0 flex items-center justify-center text-brand-teal mt-auto"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/></svg></div>
+                <div class="bg-white dark:bg-gray-800 p-3 rounded-2xl rounded-bl-none shadow-sm border border-gray-100 dark:border-gray-700 text-sm text-gray-700 dark:text-gray-300 flex items-center gap-1">
+                    <span class="w-2 h-2 bg-brand-teal/50 rounded-full animate-bounce"></span>
+                    <span class="w-2 h-2 bg-brand-teal/50 rounded-full animate-bounce" style="animation-delay: 0.1s"></span>
+                    <span class="w-2 h-2 bg-brand-teal/50 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            let botMsgDiv = null;
+            let fullResponseText = "";
+            let hasError = false;
+
+            try {
+                // Send request securely to our backend (Vercel API)
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: userMessage,
+                        history: chatHistory.slice(0, -1) 
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                document.getElementById(typingId).remove();
+                
+                botMsgDiv = appendMessage("", false);
+                const botContentArea = botMsgDiv.querySelector('.content-area');
+                
+                if (data.status === 'success') {
+                    fullResponseText = data.reply;
+                    botContentArea.innerHTML = fullResponseText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+                } else {
+                    throw new Error(data.message || "Error");
+                }
+                
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            } catch (error) {
+                hasError = true;
+                if (document.getElementById(typingId)) {
+                    document.getElementById(typingId).remove();
+                }
+                
+                console.error("Chat Error:", error);
+                
+                // Show a helpful error message to the user
+                const errorMsg = appendMessage("عذراً، حدث خطأ في الاتصال بالخادم. يرجى التأكد من تشغيل الخادم أو رفع المشروع إلى Vercel.", false);
+                errorMsg.querySelector('.content-area').classList.add('text-red-500');
+
+                bubble.classList.add('border-b-2', 'border-red-500');
+                retryBtn.classList.remove('hidden');
+                
+                retryBtn.onclick = () => {
+                    sendToGemini(userMessage, msgDivElement);
+                };
+            } finally {
+                isGenerating = false;
+                if (fullResponseText.trim() !== "") {
+                    chatHistory.push({ role: "model", parts: [{ text: fullResponseText }] });
+                } else if (hasError) {
+                    if (chatHistory.length > 0 && chatHistory[chatHistory.length - 1].role === "user") {
+                        chatHistory.pop();
+                    }
+                }
+            }
+        }
+
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userMessage = chatInput.value.trim();
+            if (!userMessage || isGenerating) return;
+
+            chatInput.value = '';
+            const msgDiv = appendMessage(userMessage, true);
+            sendToGemini(userMessage, msgDiv);
+        });
+    </script>
+</body>
+</html>
