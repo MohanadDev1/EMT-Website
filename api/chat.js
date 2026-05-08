@@ -41,7 +41,19 @@ module.exports = async (req, res) => {
         contents: contents,
         systemInstruction: {
           parts: [{ text: "أنت مستشار تسويقي ذكي ومحترف تعمل لدى شركة 'تكنولوجيا التسويق الإلكتروني'. قم بالرد بإيجاز واحترافية وبلهجة ودودة. أجب فقط على الأسئلة المتعلقة بالتسويق الإلكتروني، الإعلانات، تحسين المبيعات، والبيانات." }]
-        }
+        },
+        generationConfig: {
+          temperature: 0.7,
+          topK: 40,
+          topP: 0.95,
+          maxOutputTokens: 1024,
+        },
+        safetySettings: [
+          { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
+          { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
+          { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+          { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
+        ]
       })
     });
 
@@ -49,7 +61,14 @@ module.exports = async (req, res) => {
 
     if (!response.ok) {
       console.error("Gemini API Error Detail:", JSON.stringify(data));
-      return res.status(response.status).json({ status: 'error', message: 'خطأ في الاتصال بالذكاء الاصطناعي', detail: data });
+      const errorMsg = data.error?.message || 'خطأ في الاتصال بالذكاء الاصطناعي';
+      const errorCode = data.error?.status || response.status;
+      
+      return res.status(response.status).json({ 
+        status: 'error', 
+        message: `خطأ من جوجل (${errorCode}): ${errorMsg}`,
+        detail: data 
+      });
     }
 
     const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || "عذرًا، لم أتمكن من توليد رد.";
